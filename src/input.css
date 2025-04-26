@@ -1,1 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 @import "tailwindcss";
+
+@theme {
+
+    /* Colors */
+
+    /* Primary */
+    --color-green-500: hsl(158, 36%, 37%);
+    --color-green-700: hsl(158, 42%, 18%);
+
+    /*  Neutral */
+    --color-black: hsl(212, 21%, 14%);
+    --color-grey: hsl(228, 12%, 48%);
+    --color-cream: hsl(30, 38%, 92%);
+    --color-white: hsl(0, 0%, 100%);
+
+    /* Typography */
+
+    /* Font Families */
+    --font-montserrat: 'Montserrat', sans-serif;
+    --font-fraunces: 'Fraunces', serif;
+    
+    /* Font Size */
+    --text-xl: 32px;
+    --text-xl--line-height: 100%;
+    --text-lg: 14px;
+    --text-lg--line-height: 110%;
+    --text-base: 13px;
+    --text-base--line-height: 120%;
+    --text-sm: 12px;
+    --text-sm--line-height: 120%;
+
+
+    /* Spacing */
+    --spacing: 4px;
+
+    --breakpoint-sm: 375px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 1140px;
+}
+
+@layer base {
+    html {
+        @apply text-black font-medium
+    }
+
+    body {
+        @apply bg-cream flex items-center justify-center min-h-screen
+    }
+
+    img {
+        @apply h-full 
+    }
+
+    button {
+        @apply bg-green-500 hover:bg-green-700 flex items-center justify-center px-8 py-4 gap-2 text-white rounded-[8px] 
+    }
+}
+
+@layer components {
+    .text-preset-1 {
+        @apply font-fraunces text-xl font-bold
+    }
+
+    .text-preset-2 {
+        @apply font-montserrat text-lg font-bold
+    }
+
+    .text-preset-3 {
+        @apply font-montserrat text-base leading-[160%]
+    }
+
+    .text-preset-4 {
+        @apply font-montserrat text-sm tracking-[5px]
+    }
+
+    .text-preset-5 {
+        @apply font-montserrat text-base
+    }
+
+    .card {
+        @apply bg-white rounded-[8px] flex max-md:flex-col max-md:w-full flex-row items-center justify-center max-md:mt-20 max-md:mx-4 overflow-hidden
+    }
+
+    .card-contents {
+        @apply flex flex-col justify-start p-8 gap-6 md:w-[300px] box-border
+    }
+}
